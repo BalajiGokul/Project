@@ -22,7 +22,9 @@ if(input.equals("Signup"))
 	PreparedStatement ps = null;
 	String query="";
 	String name=request.getParameter("username");
-	query="insert into sample values('"+ name +"')";
+	String password=request.getParameter("password");
+	String email=request.getParameter("email");
+	query="insert into sample values('"+ name +"','"+password+"','"+email+"')";
 	ps=c.prepareStatement(query);
 	ps.execute();
 }
